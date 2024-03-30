@@ -41,15 +41,16 @@
 
 <!-- 第一页 -->
 <div id="firstPage">
-    <h1 style="color:yellow">十个勤天小游戏</h1>
+    <h1 style="color:yellow">Take A Guess!</h1>
     <p style="color:white">“十个勤天”是一家农业发展有限公司，由十位新农人组成。</p>
+    <p style="color:white">接下来让我们来玩几个小游戏娱乐一下！</p>
     <h4 style="color:yellow"><i>【游戏规则】</i></h4>
-    <p style="background-color: rgba(255,255,255,0.5);">在游戏一中会出现“十个勤天”的个人照片，请你根据直觉猜测这个人应该叫什么名字</p>
-    <p style="background-color: rgba(255,255,255,0.5);">在游戏二中，请你结合图片，根据第六感判断一下图片中的人在十个人中排行第几</p>
-    <p style="background-color: rgba(255,255,0,0.4);">p.s.玩完一个游戏想玩另外一个时，记得点击上方的“开始游戏”刷新题目哦！</p>
+    <p style="background-color: rgba(255,255,255,0.5);">在游戏一中会出现“十个勤天”的个人照片，请你根据直觉猜测这个人应该叫什么名字。</p>
+    <p style="background-color: rgba(255,255,255,0.5);">在游戏二中，请你结合图片，根据第六感判断一下图片中的人在十个人中排行第几。</p>
+    <p style="background-color: rgba(255,255,255,0.5);color:red;">p.s.玩完一个游戏想玩另外一个时，记得点击上方的“开始游戏”刷新题目哦！</p>
     <div class="d-grid gap-2 col-5 mx-auto">
     <button type="button" class="btn btn-success" onclick="startGame(1)">游戏一：看图猜人名</button>
-    <button type="button" class="btn btn-success" onclick="startGame(2)">游戏二：看图猜年龄</button>
+    <button type="button" class="btn btn-success" onclick="startGame(2)">游戏二：看图猜排行</button>
 </div>
 </div>
 
@@ -71,34 +72,34 @@
         currentGame = game;
         document.getElementById('firstPage').style.display = 'none';
         document.getElementById('gamePage').style.display = 'block';
-        document.getElementById('gameTitle').innerText = (game === 1) ? '游戏一：看图猜人名' : '游戏二：看图猜年龄';
+        document.getElementById('gameTitle').innerText = (game === 1) ? '游戏一：看图猜人名' : '游戏二：看图猜排行'; //判断条件的True or False来显示当前游戏的标题
     }
 
     function startNewRound() {
-        document.getElementById('gameContent').innerHTML = '';
-        const imgSrc = 'pic' + currentRound + '.jpg';
-        const img = document.createElement('img');
+        document.getElementById('gameContent').innerHTML = ''; //清空gamecontent内子元素以添加新内容
+        const imgSrc = 'pic' + currentRound + '.jpg'; //构建图片路径
+        const img = document.createElement('img'); //显示当前回合的图片
         img.src = imgSrc;
-        document.getElementById('gameContent').appendChild(img);
-        const scoreDisplay = document.createElement('div');
+        document.getElementById('gameContent').appendChild(img); //添加刚刚创建的img到游戏页面中
+        const scoreDisplay = document.createElement('div'); //用于显示得分
         scoreDisplay.innerText = '得分：' + score;
-        document.getElementById('gameContent').appendChild(scoreDisplay);
+        document.getElementById('gameContent').appendChild(scoreDisplay); //添加刚刚创建的scoredisplay到游戏页面中
 
         if (currentGame === 1) {
-            const shuffledNames = shuffleArray(correctNames.slice()); // Shuffle the names
+            const shuffledNames = shuffleArray(correctNames.slice()); // 生成正确答案的打乱顺序列表 //slice()提取子数组且不会修改原始数组
             for (let i = 0; i < shuffledNames.length; i++) {
                 const button = document.createElement('button');
-                button.innerText = shuffledNames[i];
+                button.innerText = shuffledNames[i]; //生成正确答案（姓名）的按钮
                 button.onclick = function() {
                     checkAnswer(shuffledNames[i]);
                 };
-                document.getElementById('gameContent').appendChild(button);
+                document.getElementById('gameContent').appendChild(button); //添加刚刚创建的button到游戏页面中
             }
         } else if (currentGame === 2) {
-            const shuffledOrder = shuffleArray(correctNames.slice().map((_, index) => index + 1)); // Generate shuffled order
+            const shuffledOrder = shuffleArray(correctNames.slice().map((_, index) => index + 1)); // 用map()对元素进行处理，用箭头函数将元素替换为其在数组中的索引+1，从而得到一个新数组（即1-10）
             for (let i = 0; i < shuffledOrder.length; i++) {
                 const button = document.createElement('button');
-                button.innerText = shuffledOrder[i];
+                button.innerText = shuffledOrder[i]; ////生成正确答案（排行）的按钮
                 button.onclick = function() {
                     checkAnswer(parseInt(this.innerText));
                 };
@@ -107,7 +108,7 @@
         }
 
         const nextButton = document.createElement('button');
-        nextButton.innerText = (currentRound === totalRounds) ? '返回首页' : '下一题';
+        nextButton.innerText = (currentRound === totalRounds) ? '返回首页' : '下一题'; //同上，如果当前回合等于总回合那么返回首页，如果不是，就继续下一题
         nextButton.onclick = function() {
             if (currentRound === totalRounds) {
                 endGame();
@@ -147,11 +148,11 @@
     }
 
     function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+        for (let i = array.length - 1; i > 0; i--) { //从最后一个元素开始向前遍历数组
+            const j = Math.floor(Math.random() * (i + 1)); //得到一个在 0 到 i 之间的随机整数
+            [array[i], array[j]] = [array[j], array[i]]; //将数组中索引为 i 和 j 的元素进行交换
         }
-        return array;
+        return array; //实现了打乱数组顺序的目的
     }
 </script>
 
