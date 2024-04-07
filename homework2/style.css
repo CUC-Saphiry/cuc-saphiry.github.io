@@ -1,0 +1,18 @@
+.navbar {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1000;
+}
+
+.navbar-placeholder {
+height: 56px;
+}
+
+body {
+    font-family: 'Noto Serif SC', serif;
+}
+
+.media-body {
+    margin-bottom: 20px;
+}
