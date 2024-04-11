@@ -92,9 +92,10 @@
 
       <div class="container">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-outline-secondary" onclick="window.location.reload()">全部</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="showAll()">全部</button>
             <button type="button" class="btn btn-outline-secondary" onclick="portrait()">竖屏</button>
             <button type="button" class="btn btn-outline-secondary" onclick="landscape()">横屏</button>
+
           </div>
 
 <!-- images grid-->
@@ -172,6 +173,26 @@
     </div>
   </div>
 </div>
+
+<script>
+  // 显示竖屏图片
+  function portrait() {
+    document.getElementById("landscape").style.display = "none";
+    document.getElementById("portrait").style.display = "block";
+  }
+
+  // 显示横屏图片
+  function landscape() {
+    document.getElementById("portrait").style.display = "none";
+    document.getElementById("landscape").style.display = "block";
+  }
+
+  // 显示全部图片
+  function showAll() {
+    document.getElementById("portrait").style.display = "block";
+    document.getElementById("landscape").style.display = "block";
+  }
+</script>
 
 <!--Footer-->
 <footer>
