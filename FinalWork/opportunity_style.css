@@ -1,0 +1,141 @@
+body {
+    background-color: #f3c4c7;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+  }
+.search-container {
+  display: flex;
+  align-items: center;
+}
+.search-container .dropdown,
+.search-container form {
+  margin: 0 2px;
+}
+.search-container form {
+  flex-grow: 1;
+}
+.bold {
+  font-weight:700;
+}
+.accordion-item {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px; /* 可选：添加间距 */
+  }
+  .accordion-button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background-color: #ffffff; /* 设置按钮的背景色 */
+    border: 2px solid #954656; /* 设置按钮的边框 */
+    border-radius: 5px; /* 可选：添加圆角 */
+    color: #954656; /* 设置按钮的文字颜色 */
+    font-weight: bolder;
+  }
+  .accordion-body {
+    border: 2px solid #954656; /* 添加边框 */
+    border-radius: 5px; /* 可选：添加圆角 */
+    color:#000000;
+  }
+  .accordion-button.collapsed {
+    background-color: transparent; /* 收起状态的背景色 */
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent; /* 展开时的背景色 */
+    color:#954656;
+  }
+  .accordion-button:focus {
+    box-shadow: none; /* 移除选中时的默认阴影效果 */
+  }
+  .line {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000000;
+  }
+  .tech-list span {
+    margin-right: 10px; /* Adjust the spacing here */
+  }
+  .ver {
+    display: flex;
+    justify-content: space-around; /* 使按钮均匀分布 */
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f8e4e5;
+  }
+  .zonhe,
+  .shuqi,
+  .yuancheng,
+  .yingjie {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .zonhe:hover,
+  .shuqi:hover,
+  .yuancheng:hover,
+  .yingjie:hover {
+    color: #954656;
+  }
+
+  .zonhe.active,
+  .shuqi.active,
+  .yuancheng.active,
+  .yingjie.active {
+    color: #954656;
+  }
+
+  .zhiwei {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  /* 使卡片在点击时有视觉效果 */
+.clickable {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* 继承文本颜色 */
+}
+
+/* 鼠标悬停时的视觉效果 */
+.clickable:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chakan {
+  background-color: #954656;
+  color: #ffffff;
+  border: 1px solid #954656;
+  border-radius: 5px;
+}
+.chakan:hover,
+.chakan:focus,
+.chakan:active {
+  background-color: #954656;
+  color: #ffffff;
+  border: 3px solid #954656;
+  border-radius: 5px;
+  outline: none; /* 移除悬停时的边框效果 */
+  box-shadow: none;
+}
+.user-circle {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #954656;
+  border-radius: 50%;
+  margin-right: 0.5em; /* 圆与用户名之间的间距 */
+  vertical-align: middle; /* 垂直居中对齐 */
+}
+
+.user-name {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
+  font-size: 0.875em;
+  color: #333;
+}
