@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Student'sCard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <style>
+      body {
+    background-color: #f3c4c7;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+        .media-section {
+            padding-left: 20px; /* 左边留白 */
+            padding-right: 20px; /* 右边留白 */
+        }
+
+        img:hover {
+      transform: scale(1.1);
+    }
+
+    .card {
+         margin: 0 auto; /* Added */
+         float: none; /* Added */
+         margin-bottom: 10px; /* Added */
+    }
+
+    .content-container {
+            padding-left: 100px;
+            padding-right: 100px;
+    }
+    .user-circle {
+      display: inline-block;
+      width: 4em;
+      height: 4em;
+      background-color: #954656;
+      border-radius: 50%;
+      margin-right: 0.8em; /* 圆与用户名之间的间距 */
+      vertical-align: middle; /* 垂直居中对齐 */
+    }
+
+    .user-name {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.8em;
+      margin-left: 0.8em;
+      font-size: 1.4em;
+      color: #333;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
+    .search-container .dropdown,
+    .search-container form {
+      margin: 0 2px;
+    }
+    .search-container form {
+      flex-grow: 1;
+    }
+    .bold {
+      font-weight:700;
+    }
+    .center-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #954656;
+    color: white;
+    cursor: pointer;
+    float: right;
+    }
+    </style>
+<body>
+
+  <!--Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">FindIntern</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="opportunity.html">实习机会</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="student.html">求职人才</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="notice.html">通知</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="individual.html">我的</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<a href="student.html" role="button" class="btn" style="color:white">返回</a>
+ <div class="search-container"style="padding-top: 20px;padding-right: 90px;padding-bottom: 10px;padding-left: 90px;">
+    <div class="dropdown me-2">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        筛选
+      </button>
+    </div>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="搜索学校或专业" aria-label="搜索">
+      <button class="btn btn-outline-secondary" type="submit">搜索</button>
+    </form>
+  </div>
+  <br>
+<div class="d-flex justify-content-center align-items-center h-100">
+<div class="card" style="width: 60rem;border-radius: 20px;">
+    <div class="card-header" style="border-radius: 20px;background-color:#FDFDFD;
+    padding-top: 40px;padding-right: 50px;padding-bottom: 40px;padding-left: 50px;">
+            <span class="user-circle"></span>
+            <span class="user-name">
+                张xx<br>
+                @zhangxx
+            </span><br>
+          </div>
+  <div class="card-body" style="padding-top: 30px;padding-right: 50px;padding-bottom: 50px;padding-left: 50px;">
+
+    <h5 class="card-text" style="font-weight: bold;color:#962229;">中国传媒大学&nbsp;&nbsp;&nbsp;&nbsp;本科大二在读&nbsp;&nbsp;&nbsp;&nbsp;专业：网络与新媒体<br>
+        <span href="我的—简历.html" role="button">
+            <button type="button" class="center-button">查看简历</button>
+        </span>
+  <h6 class="card-text" style="letter-spacing: 1px;line-height: 1.7;">
+      姓名：张小可<br>
+      电话：134 5678 9123<br>
+      邮箱：134 5678 9123@163.com<br>
+  </h6>
+        <hr class="light"><br>
+  <h4 class="card-title"style="font-weight: bold;letter-spacing: 1px;">实习经历</h4><br>
+  <p class="card-text" style="letter-spacing: 2px;line-height: 1.7;">
+      xxx营销公司  新媒体运营实习生<br>
+      内容：1.负责xxxxx；2.负责xxxxxxxx<br>
+      广告公司  市场部实习生<br>
+      内容：1.负责xxxxx；2.负责xxxxx<br>
+  </p>
+        <hr class="light"><br>
+    <h4 class="card-title"style="font-weight: bold;letter-spacing: 1px;">期望岗位</h4><br>
+  <p class="card-text" style="letter-spacing: 2px;line-height: 1.7;">
+      产品运营｜150-200｜北京，深圳
+      <br>
+      新媒体运营｜120-150｜北京，深圳
+      <br>
+      内容运营｜120-150｜北京，深圳
+      <br>
+      市场/营销｜面议｜行业不限｜北京
+  </p>
+</div>
+</div>
+</div>
+<br>
+
+
+</body>
+
+
+</html>
